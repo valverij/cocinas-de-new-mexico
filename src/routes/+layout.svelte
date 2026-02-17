@@ -30,7 +30,7 @@
 		<LeftNavLink href="/recipes/Postres (Desserts)" title="Postres (Desserts)">Postres (Desserts)</LeftNavLink>
 		<LeftNavLink href="/recipes/Vegetales (Vegetables)" title="Vegetales (Vegetables)">Vegetales (Vegetables)</LeftNavLink>
 	</LeftNav>
-	<main class="flex flex-col p-4 dark:text-gray-300 dark:bg-gray-800">
+	<main class="flex flex-col p-4 dark:text-gray-300 dark:bg-gray-800 flex-1">
 		{@render children()}
 	</main>
 </div>

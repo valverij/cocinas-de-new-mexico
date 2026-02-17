@@ -5,8 +5,13 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 html, body {
-    height: 100%;
+    min-height: 100%;
 }
+
+body {
+    flex: 1;
+}
+
 
 /* Tailwind p-2 */
 .markdown-recipe {
