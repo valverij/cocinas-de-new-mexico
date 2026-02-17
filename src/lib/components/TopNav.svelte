@@ -1,12 +1,34 @@
 <script lang="ts">
     import logo from "$lib/assets/logo.png";
     import { slide } from "svelte/transition";
-    import MenuIcon from "./icons/MenuIcon.svelte";
+    import { MenuIcon } from "./icons";
+    import { Button } from ".";
+    import { onMount } from "svelte"
+    import LightModeIcon from "./icons/LightModeIcon.svelte";
+    import DarkModeIcon from "./icons/DarkModeIcon.svelte";
 
     const { children }: { children: any } = $props();
 
     let showMenu = $state(false);
     let windowInnerWidth = $state(0);
+
+    let darkMode = $state(true);
+    const toggleDarkMode = () => {
+        const htmlElement = document.getElementsByTagName("html")[0]!;
+        
+        if (darkMode) {
+            htmlElement.classList.remove("dark");
+        }
+        else {
+            htmlElement.classList.add("dark");
+        }
+
+        darkMode = !darkMode;
+    };
+
+    onMount(() => {
+        darkMode = document.getElementsByTagName("html")[0]!.classList.contains("dark");
+    });
 </script>
 
 <svelte:window bind:innerWidth={windowInnerWidth}></svelte:window>
@@ -18,9 +40,16 @@
                 <img class="max-h-full" alt="Cocinas de New Mexico" src={logo} />
             </a>
         </div>
-        <div class="hidden sm:inline-flex flex-row justify-end">
+        <div class="hidden sm:inline-flex flex-row grow">
             {@render children()}
         </div>
+        <Button class="hover:bg-gray-800" onclick={toggleDarkMode}>
+            {#if darkMode}
+                <LightModeIcon></LightModeIcon>
+            {:else}
+                <DarkModeIcon></DarkModeIcon>
+            {/if}
+        </Button>
         <div class="flex flex-row justify-end grow sm:hidden">
             <button class="flex h-full items-center hover:bg-gray-800 px-4 font-semibold" onclick={() => showMenu = !showMenu}>
                 <MenuIcon></MenuIcon>
