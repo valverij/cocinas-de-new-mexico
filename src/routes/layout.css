@@ -3,6 +3,10 @@
 /* Because Tailwind sometimes doesn't think devices with touch screens can hover */
 @custom-variant hover (&:hover);
 
+html, body {
+    height: 100%;
+}
+
 /* Tailwind p-2 */
 .markdown-recipe {
     padding: calc(var(--spacing) * 2);
