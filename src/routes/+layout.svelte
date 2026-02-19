@@ -31,6 +31,13 @@
 		<LeftNavLink href="/recipes/Vegetales (Vegetables)" title="Vegetales (Vegetables)">Vegetales (Vegetables)</LeftNavLink>
 	</LeftNav>
 	<main class="flex flex-col p-4 dark:text-gray-300 dark:bg-gray-800 flex-1">
-		{@render children()}
+		<div class="flex flex-row">
+			<div id="main-content" class="flex flex-col">
+				{@render children()}
+			</div>
+			<div id="right-content" class="hidden flex-col min-w-1/4 md:block">
+				
+			</div>
+		</div>
 	</main>
 </div>
