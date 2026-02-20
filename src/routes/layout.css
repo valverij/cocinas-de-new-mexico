@@ -73,3 +73,7 @@ body {
 .markdown-recipe [data-footnotes] > ol > li::marker {
     content: "[" counter(bracket-counter) "]";
 }
+
+:root {
+    --cocinas-yellow: #FFD400;
+}

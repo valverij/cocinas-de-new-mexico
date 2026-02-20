@@ -8,6 +8,6 @@
     const { children, ...rest }: ButtonProps = $props();
 </script>
 
-<button {...rest} class="cursor-pointer flex items-center px-4">
+<button {...rest} class={["cursor-pointer", "flex", "items-center", "px-4", rest.class]}>
     {@render children()}
 </button>

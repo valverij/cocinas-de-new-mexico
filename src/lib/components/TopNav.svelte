@@ -31,9 +31,21 @@
     });
 </script>
 
+<style>
+    :global(.navbar, .navbar-item) {
+        background-color: var(--cocinas-yellow)
+    }
+
+    :global(.navbar-item:hover) {
+        /* background-color: hsl(from var(--cocinas-yellow) h s calc(l - 10)); */
+        background-color: hsl(from var(--cocinas-yellow) h calc(s + 40) calc(l - 12));
+    }
+</style>
+
 <svelte:window bind:innerWidth={windowInnerWidth}></svelte:window>
 
-<div class="bg-gray-700 text-gray-300 w-full">
+<!-- <div class="bg-gray-700 text-gray-300 w-full"> -->
+ <div class="navbar text-gray-800 w-full">
      <nav class="flex flex-row h-16 border-b border-b-gray-900">
         <div class="max-h-full">
             <a href="/" title="Home">
@@ -43,7 +55,7 @@
         <div class="hidden sm:inline-flex flex-row grow">
             {@render children()}
         </div>
-        <Button class="hover:bg-gray-800" onclick={toggleDarkMode}>
+        <Button class="navbar-item" onclick={toggleDarkMode}>
             {#if darkMode}
                 <LightModeIcon></LightModeIcon>
             {:else}
@@ -51,7 +63,7 @@
             {/if}
         </Button>
         <div class="flex flex-row justify-end grow sm:hidden">
-            <button class="flex h-full items-center hover:bg-gray-800 px-4 font-semibold" onclick={() => showMenu = !showMenu}>
+            <button class="flex h-full items-center navbar-item px-4 font-semibold" onclick={() => showMenu = !showMenu}>
                 <MenuIcon></MenuIcon>
             </button>
         </div>
