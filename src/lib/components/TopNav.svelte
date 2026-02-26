@@ -37,7 +37,6 @@
     }
 
     :global(.navbar-item:hover) {
-        /* background-color: hsl(from var(--cocinas-yellow) h s calc(l - 10)); */
         background-color: hsl(from var(--cocinas-yellow) h calc(s + 40) calc(l - 12));
     }
 </style>

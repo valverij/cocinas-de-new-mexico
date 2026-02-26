@@ -1,4 +1,4 @@
-import type { PageServerLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 import { marked } from "marked";
 import markedFootnote from "marked-footnote";
 import type { Recipe } from '$lib/models/recipe';
@@ -6,6 +6,18 @@ import path from 'path';
 import { readdirSync, readFileSync } from 'fs';
 
 const baseDir = path.join(process.cwd(), "/src/lib/server/recipes");
+
+export const prerender = true; // Enable prerendering
+
+export const entries: EntryGenerator = () => {
+	const files = readdirSync(baseDir);
+	
+	return files
+		.filter(file => file.endsWith('.md'))
+		.map(file => ({
+			section: file.replace('.md', '')
+		}));
+};
 
 export const load: PageServerLoad = async ({ params }) => {
 	
