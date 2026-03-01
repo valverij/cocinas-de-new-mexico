@@ -1,12 +1,11 @@
 <script lang="ts">
-    import { type RecipeData } from '$lib/models/recipe';
+    import { type Recipe } from '$lib/models/recipe';
 
     const {
         recipe
     } : {
-        recipe: RecipeData
+        recipe: Recipe
     } = $props();
-
 </script>
 
 <div id={recipe.divId} class="markdown-recipe">

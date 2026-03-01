@@ -1,24 +1,16 @@
 <script lang="ts">
-    import FloatingToc from '$lib/components/FloatingToc.svelte';
+    import FloatingToc, { type TocItem } from '$lib/components/FloatingToc.svelte';
     import RecipeSection from './RecipeSection.svelte';
-    import { type Recipe, type RecipeData } from '$lib/models/recipe';
 
     const { data } = $props();
-    
-    class RecipeDataModel implements RecipeData {
-        title: string;
-        divId: string;
-        html?: string;
-        active: boolean = $state(false);
 
-        constructor(recipe : Recipe) {
-            this.title = recipe.title;
-            this.divId = recipe.divId;
-            this.html = recipe.html;
-        }
-    }
+    const tocItems = $derived(data.recipes.map((recipe, i) => ({
+        elementId: recipe.divId,
+        title: recipe.title,
+        active: i === 0
+    } as TocItem)));
 
-    const recipes = $derived(data.recipes.map(recipe => new RecipeDataModel(recipe)));
+    $effect(() => console.log(tocItems));
 </script>
 
 <style>
@@ -36,13 +28,13 @@
     <div class="flex flex-col">
         <h1 class="text-3xl pl-2">{data.title}</h1>
         <div class="no-title">
-            {#each data.recipes as recipe, i (recipe.divId)}
-                <RecipeSection recipe={recipes[i]}></RecipeSection>
+            {#each data.recipes as recipe (recipe.divId)}
+                <RecipeSection {recipe}></RecipeSection>
                 <hr class="mt-2 mx-6" />
             {/each}
         </div>
     </div>
     <div class="hidden flex-col min-w-1/3 border-l top-0 pl-2 md:block">
-        <FloatingToc items={recipes}></FloatingToc>
+        <FloatingToc items={tocItems}></FloatingToc>
     </div>
 </div>
