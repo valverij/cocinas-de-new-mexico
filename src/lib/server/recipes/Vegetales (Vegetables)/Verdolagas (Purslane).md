@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Verdolagas (Purslane)
 
@@ -23,4 +23,3 @@ export default `# Vegetales (Vegetables)
 3. Add remaining ingredients to onion and cook for 10-15 minutes.
 
 **NOTE:** Purslane is a common garden weed that may be served as a leafy vegetable. Crushed chile pequin may be added for a more spicy flavor.
-`;

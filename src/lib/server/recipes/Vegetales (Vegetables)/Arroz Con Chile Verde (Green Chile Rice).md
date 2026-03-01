@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Arroz Con Chile Verde (Green Chile Rice)
 
@@ -28,4 +28,3 @@ export default `# Vegetales (Vegetables)
 
 [^1]: To use freshly cooked rice, start at step 3.
 [^2]: Varied amounts may be used.
-`;

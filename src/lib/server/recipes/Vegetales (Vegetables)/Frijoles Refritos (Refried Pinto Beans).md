@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Frijoles Refritos (Refried Pinto Beans)
 
@@ -23,4 +23,3 @@ export default `# Vegetales (Vegetables)
 3. Add 1 1/2 cups cheese to the beans and stir for 2-3 minutes at low heat.
 
 4. Garnish with remaining cheese before serving.
-`;

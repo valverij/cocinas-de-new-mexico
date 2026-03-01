@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Calabazitas (Squash)
 
@@ -27,4 +27,3 @@ export default `# Vegetales (Vegetables)
 2. Garnish with cheese before serving.
 
 [^1]: Varied amounts may be used.
-`;

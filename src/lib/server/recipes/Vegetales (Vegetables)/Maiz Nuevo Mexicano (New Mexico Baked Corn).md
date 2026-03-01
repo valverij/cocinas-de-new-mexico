@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Maiz Nuevo Mexicano (New Mexico Baked Corn)
 
@@ -24,4 +24,3 @@ export default `# Vegetales (Vegetables)
 2. Bake in a 375°F oven for 45 minutes. Lower temperature to 325°F and bake for an additional 30-45 minutes.
 
 [^1]: Varied amounts may be used.
-`;

@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Calabazitas Con Carne (Squash with Meat)
 
@@ -28,4 +28,3 @@ export default `# Vegetales (Vegetables)
 2. Add remaining ingredients, except cheese, to beef and cook at medium heat until squash is tender. Garnish with cheese before serving.
 
 [^1]: Varied amounts may be used.
-`;

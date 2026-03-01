@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Arroz Español (Spanish Rice)
 
@@ -32,4 +32,3 @@ export default `# Vegetales (Vegetables)
 5. Place shortening and rice in a large skillet. Stir-fry rice at low heat until the rice is browned, approximately 15 minutes.
 
 6. Combine sauce and rice and serve warm.
-`;

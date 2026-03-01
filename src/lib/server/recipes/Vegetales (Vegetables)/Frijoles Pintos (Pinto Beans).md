@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Frijoles Pintos (Pinto Beans)
 
@@ -28,4 +28,3 @@ export default `# Vegetales (Vegetables)
 **Variations:** Salt pork, tomatoes, tomato sauce, catsup, or onions may be added for additional flavor. 
 
 [^1]: Frijoles Pintos may be cooked in a pressure cooker for 45 minutes at 15 pounds pressure, seasoned, and simmered at low heat for an additional 30 minutes.
-`;

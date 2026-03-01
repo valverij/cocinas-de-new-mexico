@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Papas Con Chile Verde (Green Chile Potatoes)
 
@@ -23,4 +23,3 @@ export default `# Vegetales (Vegetables)
 2. Add green chile and water and simmer for 15-20 minutes at low heat.
 
 [^1]: Varied amounts may be used.
-`;

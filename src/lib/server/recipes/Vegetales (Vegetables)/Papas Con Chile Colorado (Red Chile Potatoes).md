@@ -25,4 +25,3 @@
 3. Mix chile, garlic, and salt with flour and add potatoes and water. Simmer for 10-15 minutes at low heat.
 
 [^*]: See recipe for Red Chile Powder. Varied amounts may be used.
-`;

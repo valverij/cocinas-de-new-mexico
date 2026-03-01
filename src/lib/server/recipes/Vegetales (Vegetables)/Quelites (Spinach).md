@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Quelites (Spinach)
 
@@ -28,4 +28,3 @@ export default `# Vegetales (Vegetables)
 
 [^1]: Ten ounces frozen spinach may be substituted.
 [^2]: Varied amounts may be used.
-`;

@@ -1,4 +1,4 @@
-export default `# Vegetales (Vegetables)
+# Vegetales (Vegetables)
 
 ## Flan De Maiz Mezclado (Blender Corn Custard)
 
@@ -26,4 +26,3 @@ export default `# Vegetales (Vegetables)
 2. Place casserole in a shallow pan of water and bake in a 325°F oven for approximately 1 hour, or until custard is set.
 
 [^1]: Varied amounts may be used.
-`;
