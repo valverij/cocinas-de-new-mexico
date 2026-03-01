@@ -44,7 +44,11 @@ export const load: PageServerLoad = async ({ params }) => {
 		recipes.push({
 			title: file.replaceAll(".md", ""),
 			file: file,
-			html
+			html,
+			divId: file.replaceAll(".md", "")
+				.toLocaleLowerCase()
+				.replace(/[()]/g, "")
+				.replace(/[ ]/g, "-")
 		});
 	}
 

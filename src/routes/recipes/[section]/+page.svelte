@@ -1,35 +1,48 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import FloatingToc from '$lib/components/FloatingToc.svelte';
+    import RecipeSection from './RecipeSection.svelte';
+    import { type Recipe, type RecipeData } from '$lib/models/recipe';
 
-    const { data  } = $props();
+    const { data } = $props();
+    
+    class RecipeDataModel implements RecipeData {
+        title: string;
+        divId: string;
+        html?: string;
+        active: boolean = $state(false);
 
-    onMount(() => {
-        const footnotes = document.querySelectorAll('a[href^="#"][href*="-ref-"]');
-        for (const footnote of footnotes) {
-            footnote.classList.add("footnote-ref");
-            console.log(footnote);
+        constructor(recipe : Recipe) {
+            this.title = recipe.title;
+            this.divId = recipe.divId;
+            this.html = recipe.html;
         }
-    })
+    }
+
+    const recipes = $derived(data.recipes.map(recipe => new RecipeDataModel(recipe)));
 </script>
 
-<!-- svelte-ignore css_unused_selector -->
 <style>
     :global(.no-title h1) {
         display: none;
     }
 
-    .footnote-ref::after {
-        /* content: '\ue5d9'; */
-        content: 'aksjbkads';
+    :global(section[data-footnotes] li p a[aria-label~='Back']) {
+        font-family: "Material Symbols Outlined";
+        content: "\ue5d9";
     }
 </style>
 
-<h1 class="text-3xl pl-2">{data.title}</h1>
-<div class="no-title">
-    {#each data.recipes as recipe (recipe)}
-        <div class="markdown-recipe">
-            {@html recipe.html}
+<div class="flex flex-row gap-2">
+    <div class="flex flex-col">
+        <h1 class="text-3xl pl-2">{data.title}</h1>
+        <div class="no-title">
+            {#each data.recipes as recipe, i (recipe.divId)}
+                <RecipeSection recipe={recipes[i]}></RecipeSection>
+                <hr class="mt-2 mx-6" />
+            {/each}
         </div>
-        <hr class="mt-2 mx-6" />
-    {/each}
+    </div>
+    <div class="hidden flex-col min-w-1/3 border-l top-0 pl-2 md:block">
+        <FloatingToc items={recipes}></FloatingToc>
+    </div>
 </div>
