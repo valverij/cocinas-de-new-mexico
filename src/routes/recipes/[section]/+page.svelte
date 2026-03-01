@@ -1,5 +1,6 @@
 <script lang="ts">
-    import FloatingToc, { type TocItem } from '$lib/components/FloatingToc.svelte';
+    import { type TocItem } from '$lib/components/FloatingToc.svelte';
+    import { FloatingToc, JumpToTopButton } from '$lib/components';
     import RecipeSection from './RecipeSection.svelte';
 
     const { data } = $props();
@@ -36,5 +37,6 @@
     </div>
     <div class="hidden flex-col min-w-1/3 border-l top-0 pl-2 md:block">
         <FloatingToc items={tocItems}></FloatingToc>
+        <JumpToTopButton></JumpToTopButton>
     </div>
 </div>

@@ -22,7 +22,6 @@
     const reactiveItems = $derived(items.map(item => new ReactiveItem(item)));
 
     const observerCallback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-        console.log('fired!');
         for(const entry of entries) {
             const match = reactiveItems.find(item => item.elementId === entry.target.id)!;
             match.active = entry.isIntersecting;
@@ -31,14 +30,12 @@
 
     $effect(() =>{
         const observerOptions : IntersectionObserverInit = {
-            root: document.getElementById("main-content"),
-            rootMargin: "-20% 0px -80% 0px",
+            rootMargin: "-25% 0px -75% 0px",
             threshold: 0
         };
         
         const observer = new IntersectionObserver(observerCallback, observerOptions);
         for (const { elementId } of items) {
-            console.log('subscribed: ', elementId)
             observer.observe(document.getElementById(elementId)!);
         }
 
@@ -55,10 +52,11 @@
     }
 </style>
 
-<div class="sticky top-5 border border-gray-700 bg-white dark:border-blue-700 rounded-md right-4 p-4">
-    <ul>
+<div class="sticky top-5 dark:text-gray-300 rounded-md right-4 p-4">
+    <h2 class="text-2xl">Recipes</h2>
+    <ul class="pt-2">
         {#each reactiveItems as { title, elementId, active} }
-        <li class="hover:text-blue-500">
+        <li class="hover:text-blue-500 pt-2">
             <a class={["hover:text-blue-500", active && "active"]} href="#{elementId}" aria-label="Jump to {title}">{title}</a>
         </li>
         {/each}
