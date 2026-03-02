@@ -7,9 +7,31 @@
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_warm_up,dark_mode,light_mode,menu,subdirectory_arrow_left&display=block" 
 			rel="stylesheet" 
 		/>
+		<script>
+			(function() {
+				let defaultMode = localStorage.getItem("viewMode");
+
+				if (!defaultMode) {
+					defaultMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+				}
+				
+				const html = document.getElementsByTagName("html")[0];
+
+				if (defaultMode === "dark" && !html.classList.contains("dark")) {
+					html.classList.add("dark");
+					localStorage.setItem("viewMode", "dark");
+				}
+				else if (defaultMode === "light" && html.classList.contains("dark")) {
+					html.classList.remove("dark");
+					localStorage.setItem("viewMode", "light");
+				}
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover" class="flex flex-col">
-		 %sveltekit.body%
+	<body data-sveltekit-preload-data="hover">
+		<div class="flex flex-col">
+			%sveltekit.body%
+		</div>
 	</body>
 </html>

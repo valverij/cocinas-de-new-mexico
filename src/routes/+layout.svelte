@@ -1,13 +1,14 @@
 <script lang="ts">
 	import './layout.css';
-	import '../styles/material-icons.css'
 	import favicon from '$lib/assets/favicon_alt.png';
     import { LeftNav, LeftNavLink, TopNav, TopNavLink } from '$lib/components';
 
 	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
 <TopNav>
     <TopNavLink href="/recipes/Apetitos (Appetizers)" title="Apetitos (Appetizers)">Apetitos (Appetizers)</TopNavLink>

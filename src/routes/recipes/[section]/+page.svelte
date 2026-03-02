@@ -35,7 +35,7 @@
             {/each}
         </div>
     </div>
-    <div class="hidden flex-col min-w-1/3 border-l top-0 pl-2 md:block">
+    <div class="hidden flex-col w-1/3 border-l top-0 pl-2 md:block">
         <FloatingToc items={tocItems}></FloatingToc>
         <JumpToTopButton></JumpToTopButton>
     </div>

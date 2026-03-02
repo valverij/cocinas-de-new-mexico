@@ -18,9 +18,11 @@
         
         if (darkMode) {
             htmlElement.classList.remove("dark");
+            localStorage.setItem("viewMode", "light");
         }
         else {
             htmlElement.classList.add("dark");
+            localStorage.setItem("viewMode", "dark");
         }
 
         darkMode = !darkMode;
